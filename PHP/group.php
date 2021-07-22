@@ -17,6 +17,7 @@
         function addTeam($team)
         {
             array_push($this->teams, $team);
+            return $this;
         }
 
         function generateCalendar()

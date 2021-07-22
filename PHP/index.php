@@ -1,45 +1,21 @@
 <?php
-    require_once 'team.php'; //внутри реализовать class Team
-    require_once 'group.php'; //внутри реализовать класс Group
 
-
-    /*$groupA
-        ->addTeam((new Team("Team 1"))->setCountry("Belarus"))
-        ->addTeam((new Team("Team 2"))->setCountry("Belarus"))
-        ->addTeam((new Team("Team 3"))->setCountry("Russia"))
-        ->addTeam((new Team("Team 4"))->setCountry("Russia"));*/
-
+    require_once "team.php"; //внутри реализовать class Team
+    require_once "group.php"; //внутри реализовать класс Group
 
     $groupA = new Group("Group A");
-
-
-    $team1 = new Team("Team 1");
-    $team2 = new Team("Team 2");
-    $team3 = new Team("Team 3");
-    $team4 = new Team("Team 4");
-    $team5 = new Team("Team 5");
-    $team6 = new Team("Team 6");
-    $team7 = new Team("Team 7");
-
-
-    $team1->setCountry("Belarus");
-    $team2->setCountry("Belarus");
-    $team3->setCountry("Russia");
-    $team4->setCountry("Russia");
-
-
-    $groupA->addTeam($team1);
-    $groupA->addTeam($team2);
-    $groupA->addTeam($team3);
-    $groupA->addTeam($team4);
-
+    $groupA
+        ->addTeam( (new Team("Team 1"))->setCountry("Belarus") )
+        ->addTeam( (new Team("Team 2"))->setCountry("Belarus") )
+        ->addTeam( (new Team("Team 3"))->setCountry("Russia") )
+        ->addTeam( (new Team("Team 4"))->setCountry("Russia") );
 
     $groupB = new Group("Group B", $groupA);
 
-    $groupB->addTeam($team5);
-    $groupB->addTeam($team6);
-    $groupB->addTeam($team7);
-
+    $groupB
+        ->addTeam( new Team("Team 5") )
+        ->addTeam( new Team("Team 6") )
+        ->addTeam( new Team("Team 7") );
 
     $groupA->generateCalendar();
 
